@@ -21,7 +21,6 @@ class Bottle:
 
 
 array_situations = []
-path = []
 
 def swapPourWater(array_bottle, a, b):
     situation = []
@@ -32,7 +31,8 @@ def swapPourWater(array_bottle, a, b):
     else:
         print("previous___",array_bottle[a].previous," ",array_bottle[b].previous)
         return array_bottle[a].backprevious(array_bottle[b])
-    if situation[1] == 2 or situation[2] == 2:
+    if situation[1] == 2 or situation[2] == 2: 
+        # TRạng thái mà bình 2 hoặc bình 3 chứa 2 lít nước, có thể thay 2 lít nước bằng số khác
         return True
     for i in range(len(array_bottle)):
         for j in range(len(array_bottle)):
@@ -44,5 +44,8 @@ def swapPourWater(array_bottle, a, b):
                     return status
     return status
 
-swapPourWater([Bottle(0,10), Bottle(7,7), Bottle(4,4)], 0, 4) # input dau vao a b bat ki
+swapPourWater([Bottle(0,10), Bottle(7,7), Bottle(4,4)], 0, 4) 
+# input dau vao a b bat ki, Bottle có 2 thông số, 
+# số đầu là lượng nước có, số sau là giới hạn đựng, chỉ áp dụng cho 3 bình
 print(array_situations)
+# Array_situation chính là kêt quả lượng nước lần lượt ở 3 chai cho đến khi đạt được trạng thái yêu cầu

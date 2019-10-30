@@ -1,4 +1,12 @@
-array_data = [[0,2],[0,3],[2,4],[2,6],[2,9],[6,1],[6,5],[9,7],[9,8]]
+import csv
+
+array_data = []
+
+with open('bai1_tree_prufercode.txt') as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=" ")
+    line_count = 0
+    for row in csv_reader:
+        array_data.append([int(row[0]),int(row[1])])
 
 class Node:
     def __init__(self,value):
