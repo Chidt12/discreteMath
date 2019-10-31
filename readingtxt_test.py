@@ -11,6 +11,3 @@ with open('example.txt') as csv_file:
         for i in row:
             setvertices.add(i)
 
-print(setvertices)
-print(setedges)
-
