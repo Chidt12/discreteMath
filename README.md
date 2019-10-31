@@ -21,6 +21,8 @@ Xử lý mất tầm xấp xỉ 1 phút,
 output nằm ở 2 dòng print cuối , input tìm đường ngắn nhất nhập theo comment dòng print cuối cùng
 
 Phần b:
-
+Tìm liên thông mạnh (strongly connected component) và list các từ cùng liên thông mạnh:
+ --- Làm theo 2 comment cuối của file bai3b_searching_on_graph.py
+ --- Chạy từng lệnh print để không phải chờ xử lý lâu
 
 - BÀI 4 ROBOT
