@@ -15,7 +15,7 @@ def list_incident(word, array_words):
         cnt = 0
         for i in range(len(word)):
             if i != 0 and word[i] in w:
-                if word.count(word[i]) == w.count(word[i]):
+                if word[1:].count(word[i]) <= w.count(word[i]):
                     cnt += 1
         if cnt == 4:
             array.append(w)
@@ -28,14 +28,18 @@ class GraphDirected:
     def add_edge(self,word, incident):
         self.graph[word].append(incident)
 
-    def DFS(self, start, discovered, stack = None):
+    def DFS(self, start, discovered):
         for v in self.graph[start]:
             if v not in discovered:
                 discovered[v] = [start, v]
                 self.DFS(v, discovered)
-        if stack is not None:
-            stack.append(start)
 
+    def fillOrder(self, start, discovered, stack):
+        for v in self.graph[start]:
+            if v not in discovered:
+                discovered[v] = [start, v]
+                self.fillOrder(v, discovered, stack)
+        stack.append(start)
 
     def getTranpose(self):
         g = GraphDirected()
@@ -50,7 +54,7 @@ class GraphDirected:
         for w in self.graph.keys():
             if w not in discovered:
                 discovered[w] = None
-                self.DFS(w, discovered,stack)
+                self.fillOrder(w, discovered,stack)
         graph = self.getTranpose()
         discovered = {}
         count = 0
@@ -78,15 +82,18 @@ class GraphDirected:
             return array
         return count
 
+
+
 g = GraphDirected()
 for word in array_words:
     array_incident = list_incident(word, array_words)
     for w in array_incident:
         g.add_edge(word, w)
 
-# print(g.countandfindSCCs("arses"))
+
+print(g.countandfindSCCs("words"))
 # LIst các từ trong cùng liên thông mạnh với input là từ
 
 
-print(g.countandfindSCCs())
+# print(g.countandfindSCCs())
 # số liên thông mạnh trong đồ thị g

@@ -59,21 +59,6 @@ class GraphUndirected:
                 dicovered_list[v] = edge
                 self.DFS_colouring(v, dicovered_list)
 
-    # def construct_path(self, start, end, dicovered_list):
-    #     path=[]
-    #     v= str(end)
-    #     u = str(start)
-    #     if v in discovered_list:
-    #         path.append(v)
-    #         walk = v
-    #         while walk != u:
-    #             e = discovered_list[walk]
-    #             parent = self.find_opposite(e, walk)
-    #             path.append(parent)
-    #             walk = parent
-    #         path.reverse()
-    #     return path
-
 g = GraphUndirected()
 for i in setvertices:
     g.add_vertex(i)

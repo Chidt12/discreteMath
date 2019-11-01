@@ -71,6 +71,6 @@ def BFS_complete(g):
     return count
 
 print(BFS_complete(g)) #Chỉ ra số thành phần liên thông
-print(construct_path("words", "wolds")) #Input lần lượt là từ bắt đầu và từ kết thúc
+print(construct_path("world", "wolds")) #Input lần lượt là từ bắt đầu và từ kết thúc
 
 
